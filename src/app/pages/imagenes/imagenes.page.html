@@ -1,131 +1,85 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>imagenes</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Chat IA + Imágenes</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content class="ion-padding">
+  <app-navbar></app-navbar>
+   
+  <div class="hero">
+    <h1>Prompt Engineering</h1>
+    
+    <p class="subtitle">
+      Aprende a comunicarte correctamente con la Inteligencia Artificial
+    </p>
+  </div>
+  
 
-  <div class="container">
+  <!-- FUSIÓN DE IMÁGENES -->
+  <div class="fusion-zone">
+    <div class="impact"></div>
 
-    <!-- PANEL IZQUIERDO -->
-    <div class="panel">
-      <h3>Preguntas IA</h3>
-      <ion-button expand="block" (click)="showQuestions('matematicas')">Matemáticas</ion-button>
-      <ion-button expand="block" (click)="showQuestions('programacion')">Programación</ion-button>
-      <ion-button expand="block" (click)="showQuestions('ia')">IA</ion-button>
-      <ion-button expand="block" (click)="showQuestions('chatgpt')">ChatGPT</ion-button>
-      <ion-button expand="block" (click)="showQuestions('gemini')">Gemini</ion-button>
+    <img id="chatgpt"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/512px-ChatGPT-Logo.svg.png" />
 
-      <div class="item"
-        *ngFor="let q of preguntasActuales"
-        draggable="true"
-        (dragstart)="startDragPregunta(q)">
-        {{ q.q }}
-      </div>
-    </div>
+    <img id="gemini"
+      src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/gemini-color.png" />
 
-    <!-- CHAT -->
-    <div class="chat">
-      <ion-button expand="block" color="warning" (click)="procesar()">Enviar</ion-button>
-
-      <div *ngIf="respuestaTexto" class="respuesta">
-        {{ respuestaTexto }}
-      </div>
-
-      <div *ngIf="respuestaImagen" class="respuesta-img">
-        <img [src]="respuestaImagen">
-      </div>
-    </div>
-
-    <!-- PANEL DERECHO -->
-    <div class="panel">
-      <h3>Imágenes</h3>
-      <ion-button expand="block" (click)="showFragments('dragonball')">Dragon Ball</ion-button>
-      <ion-button expand="block" (click)="showFragments('futbol')">Fútbol</ion-button>
-      <ion-button expand="block" (click)="showFragments('otros')">Otros</ion-button>
-      <ion-button expand="block" (click)="showFragments('memes')">Memes</ion-button>
-
-      <div class="item"
-        *ngFor="let f of fragmentosActuales"
-        draggable="true"
-        (dragstart)="startDragFragmento(f)">
-        {{ f.name }}
-      </div>
-    </div>
-
+    <img id="robot"
+      src="https://png.pngtree.com/png-vector/20250512/ourmid/pngtree-futuristic-robot-holding-and-using-tablet-png-image_16195269.png" />
   </div>
 
-</ion-content>
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Chat IA + Imágenes</ion-title>
-  </ion-toolbar>
-</ion-header>
+  <!-- INFORMACIÓN DEL PROMPT -->
+  <section class="cards">
 
-<ion-content class="ion-padding">
+    <div class="card good">
+      <h3>¿Qué es un Prompt?</h3>
+      <p>Es la instrucción que guía a la IA indicando rol, contexto y objetivo.</p>
+    </div>
 
-  <div class="container">
+    <div class="card good">
+      <h3>Elementos Clave</h3>
+      <ul>
+        <li>Rol de la IA</li>
+        <li>Contexto claro</li>
+        <li>Objetivo específico</li>
+        <li>Formato esperado</li>
+      </ul>
+    </div>
 
-    <!-- PANEL IZQUIERDO -->
-    <div class="panel">
-      <h3>Preguntas IA</h3>
-      <ion-button expand="block" (click)="showQuestions('matematicas')">Matemáticas</ion-button>
-      <ion-button expand="block" (click)="showQuestions('programacion')">Programación</ion-button>
-      <ion-button expand="block" (click)="showQuestions('ia')">IA</ion-button>
-      <ion-button expand="block" (click)="showQuestions('chatgpt')">ChatGPT</ion-button>
-      <ion-button expand="block" (click)="showQuestions('gemini')">Gemini</ion-button>
+    <div class="card example">
+      <h3>Buen Prompt</h3>
+      <p>
+        “Actúa como docente universitario y explica el prompt engineering
+        con ejemplos claros.”
+      </p>
+    </div>
 
-      <div class="item"
-        *ngFor="let q of preguntasActuales"
-        draggable="true"
-        (dragstart)="startDragPregunta(q)">
-        {{ q.q }}
+    <div class="card bad">
+      <h3>Mal Prompt</h3>
+      <p>“Explícame IA”</p>
+    </div>
+
+  </section>
+
+  <!-- CHAT -->
+  <section class="chat-box">
+
+    <h2>Chat para Practicar</h2>
+
+    <div class="mensajes">
+      <div *ngFor="let m of mensajes"
+           [class.user]="m.tipo === 'user'"
+           [class.ai]="m.tipo === 'ai'">
+        {{ m.texto }}
       </div>
     </div>
 
-    <!-- CHAT -->
-    <div class="chat">
-      <ion-button expand="block" color="warning" (click)="procesar()">Enviar</ion-button>
+    <ion-textarea
+      [(ngModel)]="prompt"
+      placeholder="Escribe tu prompt aquí...">
+    </ion-textarea>
 
-      <div *ngIf="respuestaTexto" class="respuesta">
-        {{ respuestaTexto }}
-      </div>
+    <ion-button expand="block" (click)="enviarPrompt()">
+      Evaluar Prompt
+    </ion-button>
 
-      <div *ngIf="respuestaImagen" class="respuesta-img">
-        <img [src]="respuestaImagen">
-      </div>
-    </div>
+  </section>
 
-    <!-- PANEL DERECHO -->
-    <div class="panel">
-      <h3>Imágenes</h3>
-      <ion-button expand="block" (click)="showFragments('dragonball')">Dragon Ball</ion-button>
-      <ion-button expand="block" (click)="showFragments('futbol')">Fútbol</ion-button>
-      <ion-button expand="block" (click)="showFragments('otros')">Otros</ion-button>
-      <ion-button expand="block" (click)="showFragments('memes')">Memes</ion-button>
-
-      <div class="item"
-        *ngFor="let f of fragmentosActuales"
-        draggable="true"
-        (dragstart)="startDragFragmento(f)">
-        {{ f.name }}
-      </div>
-    </div>
-
-  </div>
-
-</ion-content>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">imagenes</ion-title>
-    </ion-toolbar>
-  </ion-header>
 </ion-content>

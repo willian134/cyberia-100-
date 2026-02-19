@@ -1,11 +1,13 @@
 :host {
   display: block;
   min-height: 100%;
+  background-color: #000000;
 }
 
-/* Fondo general */
+/* ===== FONDO GENERAL NEGRO ===== */
 ion-content {
-  --background: radial-gradient(circle at top, #0a2a33, #000);
+  --background: #000000; /* Fondo negro sólido */
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -14,7 +16,7 @@ ion-content {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
   color: #ffffff;
 }
 
@@ -22,26 +24,21 @@ ion-content {
 
 .site-header {
   width: 100%;
-  background: linear-gradient(90deg, #020617, #0b1120);
-  border-bottom: 1px solid rgba(0,255,255,.2);
+  background: #000000; /* Fondo negro */
+  border-bottom: 1px solid rgba(0, 255, 255, .3);
 }
 
 /* NAVBAR */
 .cyber-navbar {
   max-width: 1200px;
-  margin: auto;
+  margin: 15px auto;
   padding: 12px 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: linear-gradient(90deg, #020617, #020617);
+  background: #050505; /* Negro muy leve para contraste */
   border-radius: 40px;
-
-  box-shadow:
-    0 0 10px rgba(0,255,255,.4),
-    0 0 25px rgba(0,255,255,.25);
+  box-shadow: 0 0 15px rgba(0, 255, 255, .3);
 }
 
 /* LOGO */
@@ -49,6 +46,7 @@ ion-content {
   font-size: 28px;
   color: #ffffff;
   text-shadow: 0 0 10px #00ffff;
+  font-weight: bold;
 }
 
 /* LINKS NAVBAR */
@@ -62,15 +60,14 @@ ion-content {
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 8px 15px;
   border-radius: 20px;
   transition: .3s;
 }
 
 .nav-links a:hover {
-  background: rgba(0,255,255,.12);
-  color: #ffffff;
-  box-shadow: 0 0 12px rgba(0,255,255,.8);
+  background: rgba(0, 255, 255, .15);
+  box-shadow: 0 0 15px rgba(0, 255, 255, .6);
 }
 
 /* ================= USUARIO ================= */
@@ -82,47 +79,28 @@ ion-content {
 .user-btn {
   padding: 8px 18px;
   border-radius: 30px;
-  background: linear-gradient(90deg,#1e3a8a,#06b6d4);
+  background: linear-gradient(90deg, #1e3a8a, #06b6d4);
   color: #ffffff;
   font-weight: 500;
   cursor: pointer;
-
-  box-shadow:
-    0 0 10px #00ffff,
-    0 0 25px rgba(0,255,255,.6);
+  box-shadow: 0 0 15px rgba(0, 255, 255, .5);
 }
 
 /* DROPDOWN */
 .user-dropdown {
   position: absolute;
-  top: 120%;
+  top: 125%;
   right: 0;
   width: 190px;
-
-  background: #020617;
+  background: #0a0a0a; /* Fondo casi negro */
   border-radius: 15px;
-
-  box-shadow: 0 0 20px rgba(0,255,255,.7);
-
+  box-shadow: 0 0 20px rgba(0, 255, 255, .5);
   overflow: hidden;
-
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: .3s;
-}
-
-.user-dropdown a {
-  display: block;
-  padding: 14px;
-  color: #ffffff;
-  text-decoration: none;
-  transition: .3s;
-}
-
-.user-dropdown a:hover {
-  background: rgba(0,255,255,.15);
-  color: #ffffff;
+  z-index: 100;
 }
 
 .user-menu:hover .user-dropdown {
@@ -131,54 +109,60 @@ ion-content {
   transform: translateY(0);
 }
 
-/* ================= HERO ================= */
+.user-dropdown a {
+  display: block;
+  padding: 14px;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.user-dropdown a:hover {
+  background: rgba(0, 255, 255, .15);
+}
+
+/* ================= HERO & INTRO ================= */
 
 .hero {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
+  padding: 0 20px;
 }
 
 .hero h1 {
-  color: #ffffff;
   font-size: 48px;
   letter-spacing: 2px;
+  background: linear-gradient(90deg, #fff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.hero p {
-  color: #ffffff;
-  margin-top: 10px;
-}
-
-/* ================= INTRO ================= */
-
-.intro {
+.hero p, .intro {
+  color: #e0e0e0;
+  margin-top: 15px;
   max-width: 700px;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
-  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* ================= CARDS ================= */
+/* ================= CARDS (EFECTO FLIP) ================= */
 
 .cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
-  padding: 50px;
+  padding: 50px 20px;
 }
 
 .card {
-  width: 260px;
-  height: 340px;
+  width: 280px;
+  height: 360px;
   perspective: 1000px;
 }
 
 .card-inner {
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
 }
 
@@ -192,46 +176,46 @@ ion-content {
   width: 100%;
   height: 100%;
   border-radius: 20px;
-
-  background: rgba(0,255,255,0.08);
-  border: 2px solid cyan;
-
-  box-shadow: 0 0 25px cyan;
-
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  padding: 20px;
-  backface-visibility: hidden;
+  padding: 25px;
   text-align: center;
-  color: #ffffff;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.card-front {
+  background: #050505; /* Fondo frontal negro */
 }
 
 .card-front img {
-  width: 100px;
+  width: 110px;
   margin-bottom: 20px;
-  filter: drop-shadow(0 0 10px cyan);
+  filter: drop-shadow(0 0 12px #00ffff);
 }
 
 .card-back {
   transform: rotateY(180deg);
-  background: rgba(0,40,50,0.9);
+  background: #0a0a0a; /* Fondo trasero casi negro */
+  border-color: #7b2cff; /* Cambio de color para diferenciar la vuelta */
+  box-shadow: 0 0 20px rgba(123, 44, 255, 0.4);
 }
 
 .card-back p {
-  font-size: 0.95em;
-  line-height: 1.5;
-  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* ================= FOOTER ================= */
 
 footer {
   text-align: center;
-  padding: 30px;
-  border-top: 1px solid cyan;
-  margin-top: 40px;
-  color: #ffffff;
+  padding: 40px;
+  border-top: 1px solid rgba(0, 255, 255, 0.3);
+  margin-top: 50px;
+  background: #000000;
+  color: #888;
 }

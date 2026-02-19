@@ -37,8 +37,8 @@ export const routes: Routes = [
   {
   path: 'imagenes',
   loadComponent: () =>
-    import('./pages/imagenes/imagenes1.page')
-      .then(m => m.Imagenes1Page)
+    import('./pages/imagenes/imagenes.page')
+      .then(m => m.ImagenesPage)
 },
 
 

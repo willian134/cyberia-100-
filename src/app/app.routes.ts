@@ -41,6 +41,13 @@ export const routes: Routes = [
       .then(m => m.ImagenesPage)
 },
 
+  {
+  path: 'juegoos',
+  loadComponent: () =>
+    import('./pages/juegoos/juegoos.page')
+      .then(m => m.JuegoosPage)
+},
+
 
 
 ];

@@ -1,32 +1,15 @@
-:host {
-  display: block;
-  min-height: 100%;
-}
-
-/* Fondo general degradado oscuro */
+/* Fondo general Ionic */
 ion-content {
   --background: radial-gradient(circle at top, #021c24, #000000 70%);
-  color: #ffffff;
-}
-
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
   color: #ffffff;
 }
 
 /* ================= HEADER ================= */
 
 .site-header {
-  width: 100%;
-  background: linear-gradient(90deg, #020617, #071a2c);
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
-/* NAVBAR */
 .cyber-navbar {
   max-width: 1200px;
   margin: auto;
@@ -44,22 +27,22 @@ ion-content {
     0 0 40px rgba(0,255,255,.3);
 }
 
-/* LOGO */
 .logo {
-  font-size: 26px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
   text-shadow: 0 0 15px cyan;
 }
 
-/* LINKS */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 30px;
 }
 
 .nav-links a {
   text-decoration: none;
-  font-weight: 500;
+  color: #ffffff;
   transition: .3s;
 }
 
@@ -68,13 +51,13 @@ ion-content {
   text-shadow: 0 0 10px cyan;
 }
 
-/* BOTÓN USUARIO */
 .user-btn {
   padding: 8px 20px;
   border-radius: 30px;
   background: linear-gradient(90deg,#1e3a8a,#06b6d4);
   box-shadow: 0 0 15px cyan;
   cursor: pointer;
+  color: white;
 }
 
 /* ================= HERO ================= */
@@ -82,19 +65,23 @@ ion-content {
 .hero {
   text-align: center;
   margin-top: 40px;
+  padding: 0 20px;
 }
 
 .hero h1 {
-  font-size: 56px;
-  letter-spacing: 4px;
+  font-size: 42px;
+  letter-spacing: 3px;
   font-weight: 300;
 }
 
-.hero p {
+.hero h2 {
   margin-top: 15px;
+  color: #ff4d4d;
+}
+
+.hero p {
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 15px auto;
   color: #ff4d4d;
 }
 
@@ -104,13 +91,13 @@ ion-content {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 40px;
   padding: 60px 20px;
 }
 
 .card {
-  width: 280px;
-  height: 360px;
+  width: 260px;
+  height: 340px;
   border-radius: 25px;
 
   background: rgba(0, 40, 50, 0.7);
@@ -126,7 +113,6 @@ ion-content {
   justify-content: center;
 
   transition: 0.4s ease;
-  cursor: pointer;
 }
 
 .card:hover {
@@ -137,21 +123,16 @@ ion-content {
 }
 
 .card img {
-  width: 110px;
-  margin-bottom: 25px;
+  width: 90px;
+  margin-bottom: 20px;
   filter: drop-shadow(0 0 15px cyan);
 }
 
 .card h3 {
-  font-size: 22px;
-  margin-top: 10px;
+  color: white;
 }
 
-/* ================= FOOTER ================= */
-
-footer {
-  text-align: center;
-  padding: 30px;
-  border-top: 1px solid cyan;
-  margin-top: 40px;
+/* Scroll extra seguro */
+ion-content::part(scroll) {
+  overflow-y: auto;
 }

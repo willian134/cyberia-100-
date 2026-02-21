@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/cyberia",
+  "buildCommand": "ionic build",
+  "outputDirectory": "www",
   "framework": null,
   "routes": [
     { "handle": "filesystem" },

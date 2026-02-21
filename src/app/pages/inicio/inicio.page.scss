@@ -1,160 +1,119 @@
-/* FONDO NEGRO NEÓN */
-.neon-content {
+/* FORZAR FONDO NEGRO SIEMPRE */
+ion-content {
   --background: #000000 !important;
-  background: #000000 !important;
 }
 
-/* NAVBAR */
-.site-header {
-  padding: 20px 10px;
-}
-
-.cyber-navbar {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 25px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  border-radius: 40px;
-  background: #020b1c;
-
-  box-shadow:
-    0 0 25px #00ffff,
-    0 0 80px rgba(0,255,255,0.6);
-}
-
-/* LOGO */
-.logo {
-  font-size: 20px;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-/* LINKS */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  transition: .3s;
-}
-
-.nav-links a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-/* BOTÓN */
-.user-btn {
-  padding: 6px 18px;
-  border-radius: 25px;
-  background: linear-gradient(90deg,#1e3a8a,#06b6d4);
-  box-shadow: 0 0 20px #00ffff;
-  font-size: 13px;
-  color: white;
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  margin-top: 30px;
-  padding: 0 20px;
-}
-
-.hero h1 {
-  font-size: 40px;
-  color: white;
-  text-shadow: 0 0 20px #00ffff;
-}
-
-.hero p {
-  color: #00ffff;
-}
-
-/* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.card {
-  height: 300px;
-  border-radius: 20px;
-  background: rgba(0, 40, 50, 0.6);
-  border: 2px solid #00ffff;
-
-  box-shadow:
-    0 0 30px #00ffff,
-    0 0 80px rgba(0,255,255,0.8);
-
+/* CONTENEDOR GENERAL */
+.container {
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #020c1b, #000000);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* TITULO NEON */
+.title {
+  color: #ffffff;
+  font-size: 2.3rem;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+}
+
+/* GRID RESPONSIVE */
+.cards {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+/* TARJETA */
+.card {
+  height: 320px;
+  perspective: 1000px;
+}
+
+/* CONTENEDOR INTERNO */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+/* EFECTO GIRO */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* PARA MOVIL (TOUCH) */
+.card:active .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* CARAS */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  display: flex;
   justify-content: center;
-
-  transition: 0.3s;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #ffffff;
 }
 
-.card:hover {
-  transform: scale(1.05);
+/* FRENTE */
+.card-front {
+  background: #050b18;
+  border: 2px solid #00ffff;
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px #00ffff,
+    inset 0 0 20px #001f2f;
 }
 
-.card img {
-  width: 80px;
-  margin-bottom: 15px;
-  filter: drop-shadow(0 0 15px cyan);
+/* ATRAS */
+.card-back {
+  background: #020c1b;
+  border: 2px solid #ff00ff;
+  box-shadow:
+    0 0 15px #ff00ff,
+    0 0 30px #ff00ff,
+    inset 0 0 20px #2a0030;
+  transform: rotateY(180deg);
 }
 
-.card h3 {
-  color: white;
+/* TEXTO */
+.card h2 {
+  font-size: 1.4rem;
+  text-shadow: 0 0 10px #00ffff;
 }
 
-/* ================= RESPONSIVE ================= */
-
-/* TABLET */
-@media (max-width: 992px) {
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
+.card p {
+  font-size: 1rem;
 }
 
-/* CELULAR */
-@media (max-width: 600px) {
-
-  .cyber-navbar {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
+  .card {
+    height: 280px;
   }
-
-  .hero h1 {
-    font-size: 26px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
 }

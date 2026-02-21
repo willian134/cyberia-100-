@@ -1,6 +1,6 @@
 {
   "buildCommand": "ionic build",
-
+  "outputDirectory": "www",
   "framework": null,
   "routes": [
     { "handle": "filesystem" },

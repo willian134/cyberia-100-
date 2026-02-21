@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "www",
+  "outputDirectory": "dist/cyberia",
   "framework": null,
   "routes": [
     { "handle": "filesystem" },

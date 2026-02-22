@@ -1,3 +1,9 @@
+
+:host {
+  display: block;
+  min-height: 100%;
+}
+
 /* =========================================
    BASE Y ESTRUCTURA (FONDO NEGRO)
    ========================================= */
@@ -17,17 +23,6 @@ ion-content {
 
 section {
   padding: 90px 8%;
-}
-
-:host {
-  display: block;
-  min-height: 100%;
-}
-
-/* Fondo general */
-ion-content {
-  --background: radial-gradient(circle at top, #0a2a33, #000);
-  color: #ffffff;
 }
 
 /* RESET */

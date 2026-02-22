@@ -1,3 +1,8 @@
+
+:host {
+  display: block;
+  min-height: 100%;
+}
 /* =========================================
    BASE Y ESTRUCTURA (FONDO NEGRO)
    ========================================= */
@@ -17,20 +22,6 @@ ion-content {
 
 section {
   padding: 90px 8%;
-}
-:host {
-  display: block;
-  min-height: 100%;
-}
-
-/* ================= FONDO NEGRO GLOBAL ================= */
-
-/* Fuerza negro real en Ionic */
-ion-content {
-  --background: #000000 !important;
-  --ion-background-color: #000000 !important;
-  background: #000000 !important;
-  color: #ffffff;
 }
 
 /* ================= RESET LIMPIO ================= */

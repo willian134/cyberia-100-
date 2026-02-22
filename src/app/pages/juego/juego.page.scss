@@ -1,6 +1,57 @@
 /* =========================================
    BASE Y ESTRUCTURA (FONDO NEGRO)
+   
    ========================================= */
+   /* =========================================
+   RESPONSIVE TABLERO OPTIMIZADO CELULAR
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Ajuste general de secciones */
+  section {
+    padding: 40px 5%;
+  }
+
+  /* TABLERO */
+  #tablero {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    gap: 6px;
+    padding: 10px 0;
+  }
+
+  /* CASILLAS */
+  .casilla {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Cuadradas automáticas */
+    height: auto;
+    font-size: 10px;
+    border-radius: 8px;
+  }
+
+  /* FICHAS */
+  .ficha {
+    width: 55%;
+    height: 55%;
+    left: 22%;
+    bottom: 5%;
+    font-size: 16px;
+  }
+
+  /* MODAL MÁS ADAPTABLE */
+  #preguntaBox {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .opcion {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+}
 body {
   margin: 0;
   padding: 0;
@@ -104,41 +155,4 @@ ion-button {
 .opcion:hover {
   background: #00b4d8;
   color: #ffffff;
-}
-@media (max-width: 768px) {
-
-  .hero {
-    padding: 40px 15px;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .intro {
-    padding: 20px 15px;
-  }
-
-  .intro h2 {
-    font-size: 1.4rem;
-  }
-
-  .intro p {
-    font-size: 0.95rem;
-  }
-
-  .cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 320px;
-    height: 280px;
-  }
-
 }

@@ -1,7 +1,22 @@
+/* =========================================
+   BASE Y ESTRUCTURA (FONDO NEGRO)
+   ========================================= */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* Fondo negro total */
+}
+
 ion-content {
-  --background: radial-gradient(circle, #acb1b9, #000);
-  color: #ffffff;
-  text-align: center;
+  --background: #000000; /* Asegura el fondo en Ionic */
+  background-color: #000000;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+section {
+  padding: 90px 8%;
 }
 
 button,

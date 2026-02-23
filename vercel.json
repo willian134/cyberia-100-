@@ -1,9 +1,0 @@
-{
-  "buildCommand": "ionic build",
-  "outputDirectory": "www",
-  "framework": null,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
-  ]
-}

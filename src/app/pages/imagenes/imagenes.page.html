@@ -1,84 +1,79 @@
-<ion-content>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Prompt Engineering</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <app-navbar></app-navbar>
-   
-  <div class="hero">
-    <h1>Prompt Engineering</h1>
-    
-    <p class="subtitle">
-      Aprende a comunicarte correctamente con la Inteligencia Artificial
-    </p>
-  </div>
+<ion-content fullscreen="true">
 
+  <div class="mobile-container">
 
-  <!-- // DE IMÁGENES -->
-  <div class="fusion-zone">
-    <div class="impact"></div>
-
-    <img id="chatgpt"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/512px-ChatGPT-Logo.svg.png" />
-
-    <img id="gemini"
-      src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/gemini-color.png" />
-
-    <img id="robot"
-      src="https://png.pngtree.com/png-vector/20250512/ourmid/pngtree-futuristic-robot-holding-and-using-tablet-png-image_16195269.png" />
-  </div>
-
-  <!-- INFORMACIÓN DEL PROMPT -->
-  <section class="cards">
-
-    <div class="card good">
-      <h3>¿Qué es un Prompt?</h3>
-      <p>EUn prompt es la instrucción, pregunta o texto que una persona escribe para que la inteligencia artificial genere una respuesta. Es la forma en que le indicamos qué queremos que haga o explique.</p>
-    </div>
-
-    <div class="card good">
-      <h3>Elementos Clave</h3>
-      <ul>
-        <li>Rol de la IA</li>
-        <li>Contexto claro</li>
-        <li>Objetivo específico</li>
-        <li>Formato esperado</li>
-      </ul>
-    </div>
-
-    <div class="card example">
-      <h3>Buen Prompt</h3>
-      <p>
-        Un buen prompt es una pregunta clara, específica y con suficiente detalle, lo que permite obtener una respuesta precisa y útil. Por ejemplo: “Explícame la Revolución Francesa en 5 líneas y con lenguaje sencillo”.
+    <div class="hero">
+      <h1>Prompt Engineering</h1>
+      <p class="subtitle">
+        Aprende a comunicarte correctamente con la Inteligencia Artificial
       </p>
     </div>
 
-    <div class="card bad">
-      <h3>Mal Prompt</h3>
-      <p>Un mal prompt es una pregunta poco clara o muy general que no da suficiente información, por lo que la respuesta puede ser vaga. Por ejemplo: “Háblame de historia”. Es mejor ser específico para obtener una respuesta clara.</p>
+    <!-- IMÁGENES -->
+    <div class="fusion-zone">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/512px-ChatGPT-Logo.svg.png" />
+
+      <img
+        src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/gemini-color.png" />
+
+      <img
+        src="https://png.pngtree.com/png-vector/20250512/ourmid/pngtree-futuristic-robot-holding-and-using-tablet-png-image_16195269.png" />
     </div>
 
-  </section>
+    <!-- INFORMACIÓN -->
+    <section class="cards">
 
-  <!-- CHAT -->
-  <section class="chat-box">
-
-    <h2>Chat para Practicar</h2>
-
-    <div class="mensajes">
-      <div *ngFor="let m of mensajes"
-           [class.user]="m.tipo === 'user'"
-           [class.ai]="m.tipo === 'ai'">
-        {{ m.texto }}
+      <div class="card">
+        <h3>¿Qué es un Prompt?</h3>
+        <p>
+          Un prompt es la instrucción o pregunta que escribimos para que la IA genere una respuesta.
+        </p>
       </div>
-    </div>
 
-    <ion-textarea
-      [(ngModel)]="prompt"
-      placeholder="Escribe tu prompt aquí...">
-    </ion-textarea>
+      <div class="card">
+        <h3>Elementos Clave</h3>
+        <ul>
+          <li>Rol de la IA</li>
+          <li>Contexto claro</li>
+          <li>Objetivo específico</li>
+          <li>Formato esperado</li>
+        </ul>
+      </div>
 
-    <ion-button expand="block" (click)="enviarPrompt()">
-      Evaluar Prompt
-    </ion-button>
+    </section>
 
-  </section>
+    <!-- CHAT -->
+    <section class="chat-box">
+
+      <h2>Chat para Practicar</h2>
+
+      <div class="mensajes">
+        <div *ngFor="let m of mensajes"
+             [class.user]="m.tipo === 'user'"
+             [class.ai]="m.tipo === 'ai'">
+          {{ m.texto }}
+        </div>
+      </div>
+
+      <ion-textarea
+        autoGrow="true"
+        [(ngModel)]="prompt"
+        placeholder="Escribe tu prompt aquí...">
+      </ion-textarea>
+
+      <ion-button expand="block" (click)="enviarPrompt()">
+        Evaluar Prompt
+      </ion-button>
+
+    </section>
+
+  </div>
 
 </ion-content>

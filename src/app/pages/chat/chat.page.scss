@@ -1,3 +1,28 @@
+.mobile-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ion-button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+h1, h2, h3, p {
+  word-wrap: break-word;
+}
+
+* {
+  box-sizing: border-box;
+}
 /* =========================================
    BASE Y ESTRUCTURA (FONDO NEGRO)
    ========================================= */
@@ -145,39 +170,4 @@ section {
   border: none;
   border-radius: 8px;
   padding: 8px 14px;
-}
-/* =====================================
-   RESPONSIVE REAL PARA IONIC - CELULAR
-   ===================================== */
-
-@media (max-width: 768px) {
-
-  ion-grid,
-  ion-row,
-  ion-col {
-    width: 100% !important;
-  }
-
-  ion-col {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* Panel izquierdo */
-  .panel,
-  .sidebar {
-    width: 100% !important;
-    margin-bottom: 20px;
-  }
-
-  /* Chat */
-  .chat-container {
-    width: 100% !important;
-  }
-
-  /* Evita desbordamiento horizontal */
-  ion-content {
-    overflow-x: hidden;
-  }
-
 }

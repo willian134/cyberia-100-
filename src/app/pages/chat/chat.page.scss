@@ -1,24 +1,7 @@
-/* =========================================
-   BASE Y ESTRUCTURA (FONDO NEGRO)
-   ========================================= */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #000000; /* Fondo negro total */
+/* FONDO GENERAL CYBER */
+.cyber-bg {
+  --background: radial-gradient(circle at top, #0f172a, #020617);
 }
-
-ion-content {
-  --background: #000000; /* Asegura el fondo en Ionic */
-  background-color: #000000;
-  color: white;
-  overflow-x: hidden;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-}
-
-section {
-  padding: 90px 8%;
-}
-
 
 /* LAYOUT */
 .layout {
@@ -149,4 +132,38 @@ section {
   border-radius: 8px;
   padding: 8px 14px;
 }
+/* =====================================
+   RESPONSIVE REAL PARA IONIC - CELULAR
+   ===================================== */
 
+@media (max-width: 768px) {
+
+  ion-grid,
+  ion-row,
+  ion-col {
+    width: 100% !important;
+  }
+
+  ion-col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Panel izquierdo */
+  .panel,
+  .sidebar {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  /* Chat */
+  .chat-container {
+    width: 100% !important;
+  }
+
+  /* Evita desbordamiento horizontal */
+  ion-content {
+    overflow-x: hidden;
+  }
+
+}

@@ -266,3 +266,40 @@ footer {
   }
 
 }
+/* =========================================
+   TABLERO 100% RESPONSIVE PROFESIONAL
+   ========================================= */
+
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 8px;
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.casilla {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Siempre cuadradas */
+  background: #031c3a;
+  border-radius: 10px;
+  position: relative;
+  font-size: clamp(10px, 2vw, 14px);
+  color: #ffffff;
+}
+
+.ficha {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(16px, 3vw, 26px);
+  color: #ffffff;
+}

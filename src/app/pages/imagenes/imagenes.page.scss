@@ -317,3 +317,23 @@ ion-button {
   }
 
 }
+.fusion-zone {
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fusion-zone img,
+.impact,
+#robot {
+  pointer-events: none;
+}
+
+.chat-box {
+  position: relative;
+  z-index: 10;
+}
+
+ion-textarea {
+  position: relative;
+  z-index: 20;
+}

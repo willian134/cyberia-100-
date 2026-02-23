@@ -1,9 +1,23 @@
-/* FONDO GENERAL CYBER */
-.cyber-bg {
-  --background: radial-gradient(circle at top, #0f172a, #020617);
+/* =========================================
+   BASE Y ESTRUCTURA (FONDO NEGRO)
+   ========================================= */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* Fondo negro total */
 }
 
-/* LAYOUT */
+ion-content {
+  --background: #000000; /* Asegura el fondo en Ionic */
+  background-color: #000000;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+section {
+  padding: 90px 8%;
+}
 .layout {
   display: flex;
   justify-content: center;

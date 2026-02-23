@@ -337,3 +337,6 @@ ion-textarea {
   position: relative;
   z-index: 20;
 }
+* {
+  pointer-events: auto !important;
+}

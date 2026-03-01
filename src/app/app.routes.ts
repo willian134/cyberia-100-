@@ -46,7 +46,11 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./pages/juegoos/juegoos.page')
       .then(m => m.JuegoosPage)
-},
+},  {
+    path: 'lab-ia',
+    loadComponent: () => import('./pages/lab-ia/lab-ia.page').then( m => m.LabIaPage)
+  },
+
 
 
 

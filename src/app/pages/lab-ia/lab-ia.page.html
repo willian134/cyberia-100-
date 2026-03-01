@@ -1,0 +1,55 @@
+<ion-content fullscreen="true">
+
+  <div class="hero">
+    <h1>Laboratorio IA</h1>
+    <p>Evaluador profesional de prompts</p>
+  </div>
+
+  <section class="lab-container">
+
+    <ion-textarea
+      [(ngModel)]="prompt"
+      placeholder="Escribe tu prompt aquí...">
+    </ion-textarea>
+
+    <ion-button expand="block" (click)="analizarPrompt()">
+      Analizar Prompt
+    </ion-button>
+
+    <div class="resultado" *ngIf="resultado">
+
+      <h3>Evaluación Técnica</h3>
+
+      <div class="metric">
+        <span>Claridad</span>
+        <div class="bar">
+          <div class="fill" [style.width.%]="resultado.claridad"></div>
+        </div>
+      </div>
+
+      <div class="metric">
+        <span>Contexto</span>
+        <div class="bar">
+          <div class="fill" [style.width.%]="resultado.contexto"></div>
+        </div>
+      </div>
+
+      <div class="metric">
+        <span>Formato</span>
+        <div class="bar">
+          <div class="fill" [style.width.%]="resultado.formato"></div>
+        </div>
+      </div>
+
+      <div class="metric">
+        <span>Especificidad</span>
+        <div class="bar">
+          <div class="fill" [style.width.%]="resultado.especificidad"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+</ion-content>

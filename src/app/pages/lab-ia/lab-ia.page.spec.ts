@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ImagenesPage } from './imagenes.page';
+import { LabIaPage } from './lab-ia.page';
 
-describe('ImagenesPage', () => {
-  let component: ImagenesPage;
-  let fixture: ComponentFixture<ImagenesPage>;
+describe('LabIaPage', () => {
+  let component: LabIaPage;
+  let fixture: ComponentFixture<LabIaPage>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImagenesPage);
+    fixture = TestBed.createComponent(LabIaPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -15,4 +15,3 @@ describe('ImagenesPage', () => {
     expect(component).toBeTruthy();
   });
 });
-//
